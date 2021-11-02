@@ -12,7 +12,7 @@ namespace Task4._2
             //example with a queue
             int sum = 0;
             int summa = 0;
-            //int summa3 = 0;
+            int summa3 = 0;
             int[] arr = Enumerable.Range(1, 25).ToArray();
             Console.WriteLine("Queue");
             foreach (int num in arr)
@@ -20,21 +20,25 @@ namespace Task4._2
                 Console.WriteLine(num);
             }
             int min1 = arr[0];
+            int imin1 = 0;
 
             for (int i = 0; i < arr.Length; i++)
                 if (arr[i] < min1)
                 {
                     min1 = arr[i];
+                    imin1 = i;
                 }
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Element min " + min1);
 
             int max1 = arr[0];
+           int imax1 = 0;
             for (int i = 0; i < arr.Length; i++)
                 if (arr[i] > max1)
                 {
                     max1 = arr[i];
+                    imax1 = i;
                 }
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
@@ -57,14 +61,14 @@ namespace Task4._2
             Console.WriteLine("Sum max and min : " + summa1);
             Console.WriteLine("Sum between the maximum and minimum: " + summa2);
             Console.WriteLine("---------------------------------------------------------");
-            /*for (int i = Math.Min(min1, max1); i < Math.Max(min1, max1); i++)
+            for (int i = Math.Min(imin1, imax1)+1; i < Math.Max(imin1, imax1); i++)
             {
                 summa3+= arr[i];
             }
             foreach (int i in arr)
                 Console.Write(i + " ");
             Console.WriteLine("Сумма: " + summa3);
-            Console.WriteLine("----------------------------------------------------------");*/
+            Console.WriteLine("----------------------------------------------------------");
 
             //example with a random
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -96,26 +100,30 @@ namespace Task4._2
             }
 
             int min = ArrayA[0];
+            int imin = 0;
 
             for (int i = 0; i < ArrayA.Length; i++)
                 if (ArrayA[i] < min)
                 {
                     min = ArrayA[i];
+                    imin = i;
                 }
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Element min " + min);
 
             int max = ArrayA[0];
+            int imax = 0;
             for (int i = 0; i < ArrayA.Length; i++)
                 if (ArrayA[i] > max)
                 {
                     max = ArrayA[i];
+                    imax = i;
                 }
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Element max " + max);
- 
+
             for (int i = 0; i < ArrayA.Length; i++)
             {
                 if (max > min && (i - 1) < max)
@@ -133,6 +141,7 @@ namespace Task4._2
             Console.WriteLine("Sum all elements: " + sum);
             Console.WriteLine("Sum max and min : " + sum1);
             Console.WriteLine("Sum between the maximum and minimum: " + sum2);
+            Console.ReadKey();
         }
     }
 }
