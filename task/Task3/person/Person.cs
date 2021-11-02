@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace example3
 {
-    public class Person: IDisplayable
+   abstract public class Person: IDisplayable
     {
         public Guid id { get; set; }
         public string FirstName { get; set; }
