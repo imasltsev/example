@@ -13,7 +13,7 @@ namespace example3
         public string JobTitle { get; set; }
         public string JobDescription { get; set; }
         public decimal JobSalary { get; set; }
-       public string FullName => $"{FirstName} {LastName}";
+        public string FullName => $"{FirstName} {LastName}";
        
         public virtual void Display()
         {
