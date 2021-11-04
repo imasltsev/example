@@ -10,15 +10,17 @@ namespace example3
     {
         static void Main(string[] args)
         {
+            string[] persons = { "Employee", "Candidate" };
+
             Random rnd = new Random();
             int maxValueOfPerson = rnd.Next(25);
-            var personfactory = new PersonFactory();
+            var personfactory = new UserFactory();
             var employees = new List<Employee>();
             var candidates = new List<Candidate>();
           
             for (int i = 0; i < maxValueOfPerson; i++)
             {
-                personfactory.GeneratePerson(Convert.ToString((Persons)rnd.Next(2)), candidates, employees);
+                personfactory.GeneratePerson(persons[rnd.Next(2)], candidates, employees);
             }
             foreach(var person in employees)
             {
@@ -29,13 +31,12 @@ namespace example3
             {
                 person.Display();
                 Console.WriteLine();
-
             }
+            var erg = new EmployeeReportGenerator();
+            erg.SortEmployee(employees);
+
+            var crg = new CandidateReportGenerator();
+            crg.SortCandidate(candidates);
         }
     }
-}
-enum Persons
-{
-    Candidate,
-    Employee
 }
