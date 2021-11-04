@@ -13,6 +13,7 @@ namespace Task4._2
             int sum = 0;
             int summa = 0;
             int summa3 = 0;
+            int summ = 0;
             int[] arr = Enumerable.Range(1, 25).ToArray();
             Console.WriteLine("Queue");
             foreach (int num in arr)
@@ -33,7 +34,7 @@ namespace Task4._2
             Console.WriteLine("Element min " + min1);
 
             int max1 = arr[0];
-           int imax1 = 0;
+            int imax1 = 0;
             for (int i = 0; i < arr.Length; i++)
                 if (arr[i] > max1)
                 {
@@ -61,9 +62,9 @@ namespace Task4._2
             Console.WriteLine("Sum max and min : " + summa1);
             Console.WriteLine("Sum between the maximum and minimum: " + summa2);
             Console.WriteLine("---------------------------------------------------------");
-            for (int i = Math.Min(imin1, imax1)+1; i < Math.Max(imin1, imax1); i++)
+            for (int i = Math.Min(imin1, imax1) + 1; i < Math.Max(imin1, imax1); i++)
             {
-                summa3+= arr[i];
+                summa3 += arr[i];
             }
             foreach (int i in arr)
                 Console.Write(i + " ");
@@ -141,6 +142,14 @@ namespace Task4._2
             Console.WriteLine("Sum all elements: " + sum);
             Console.WriteLine("Sum max and min : " + sum1);
             Console.WriteLine("Sum between the maximum and minimum: " + sum2);
+            Console.WriteLine("---------------------------------------------------------");
+            for (int i = Math.Min(imin, imax) + 1; i < Math.Max(imin, imax); i++)
+            {
+                summ += ArrayA[i];
+            }
+            foreach (int i in ArrayA)
+                Console.Write(i + " ");
+            Console.WriteLine("Сумма: " + summ);
             Console.ReadKey();
         }
     }
